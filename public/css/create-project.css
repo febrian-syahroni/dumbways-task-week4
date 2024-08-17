@@ -1,0 +1,72 @@
+body {
+  background-color: gainsboro !important;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+  gap: 20px;
+
+  h1 {
+    font-size: x-large;
+  }
+
+  form {
+    width: 40%;
+
+    label {
+      width: 100%;
+    }
+
+    .date {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+    .checkbox {
+      gap: 0 50px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .submit {
+      display: flex;
+      justify-content: end;
+
+      .btn {
+        line-height: 20px;
+      }
+    }
+  }
+
+  .edit-delete {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2%;
+  }
+}
+
+.logout {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  section {
+    form {
+      width: 90%;
+    }
+  }
+
+  .logout {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,62 @@
+<h1>Edit Project</h1>
+
+{{#if error}}
+  <p style="color: red;">{{error}}</p>
+{{/if}}
+
+<form action="/edit-project/{{project.id}}" method="POST" enctype="multipart/form-data">
+  <div>
+    <label for="name">Nama Project:</label>
+    <input type="text" id="name" name="name" value="{{project.name}}" required>
+  </div>
+  
+  <div>
+    <label for="start_date">Tanggal Mulai:</label>
+    <input type="date" id="start_date" name="start_date" value="{{formatDateForInput project.start_date}}" required>
+  </div>
+  
+  <div>
+    <label for="end_date">Tanggal Selesai:</label>
+    <input type="date" id="end_date" name="end_date" value="{{formatDateForInput project.end_date}}" required>
+  </div>
+  
+  <div>
+    <label for="description">Deskripsi:</label>
+    <textarea id="description" name="description" required>{{project.description}}</textarea>
+  </div>
+  
+  {{!-- Technologies --}}
+  <label class="form-label">Technologies
+    <div class="checkbox text-secondary form-check mb-3">
+      {{#each technologies}}
+        <label class="form-check-label" for="checklist-{{@index}}">
+          <input
+            name="checklist"
+            value="{{this.icon}}"
+            type="checkbox"
+            class="form-check-input shadow-sm"
+            id="checklist-{{@index}}"
+            {{#if (isChecked this.icon ../project.technologies)}}checked{{/if}}
+          />
+          {{this.name}}
+        </label>
+      {{/each}}
+    </div>
+  </label>
+  
+  <div>
+    <label for="image">Upload Gambar:</label>
+    <input type="file" id="image" name="image" accept="image/*">
+  </div>
+  
+  {{#if project.image}}
+    <div>
+      <p>Gambar saat ini:</p>
+      <img src="{{project.image}}" alt="Current project image" width="200">
+    </div>
+  {{/if}}
+  
+  <button type="submit">Simpan Perubahan</button>
+</form>
+
+<a href="/">Kembali ke Beranda</a>

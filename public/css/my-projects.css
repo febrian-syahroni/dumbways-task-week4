@@ -1,0 +1,192 @@
+body {
+  background-color: gray;
+  overflow-x: hidden;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.lembar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: auto;
+  width: 70%;
+  padding: 2% 4%;
+
+  .content {
+    width: 90%;
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  align-self: center;
+  grid-column: span 2;
+}
+
+.bulat {
+  border-radius: 100px;
+  padding: 2px 20px;
+}
+
+.download-cv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+
+  img {
+    margin: 0 10px;
+  }
+}
+
+.icons {
+  margin: 40px 0;
+
+  .socmed {
+    margin: 0 10px;
+  }
+}
+
+.profile {
+  width: 16rem;
+  .name-title {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+
+    h5 {
+      font-weight: bolder;
+    }
+  }
+}
+
+.edit-delete {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2%;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  padding: 50px 0;
+  gap: 20px;
+
+  .container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    font-size: small;
+    display: grid;
+    width: auto;
+    gap: 20px;
+
+    .project-name {
+      text-decoration: none;
+      font-weight: bold;
+      color: black;
+    }
+
+    .date {
+      margin-top: 10px;
+      font-size: small;
+    }
+
+    a {
+      font-size: small;
+      line-height: 10px;
+    }
+
+    .technologies {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: start;
+      margin: 10px 0;
+      gap: 5px;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    .description {
+      overflow: hidden;
+      min-height: auto;
+      max-height: 100px;
+    }
+  }
+}
+
+.logout {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .logout {
+    flex-direction: column;
+  }
+
+  section {
+    margin: 0;
+    .lembar {
+      display: flex;
+      flex-direction: row;
+      padding: 2% 10%;
+      scale: 50%;
+      width: 200%;
+      padding: 10%;
+      gap: 20px;
+    }
+
+    .card-body {
+      padding: 0;
+      line-height: 15px;
+      margin: auto;
+    }
+  }
+
+  .projects {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+
+      .technologies {
+        img {
+          width: 10px;
+        }
+      }
+
+      .card-container {
+        .card {
+          width: 100% !important;
+          font-size: xx-small;
+          line-height: 10px;
+
+          .project-name {
+            font-size: small;
+          }
+
+          .date {
+            font-size: xx-small;
+          }
+
+          a {
+            font-size: xx-small;
+            line-height: 5px;
+          }
+        }
+      }
+    }
+  }
+}

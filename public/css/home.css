@@ -1,0 +1,34 @@
+body {
+  overflow: hidden;
+  background-image: url(/public/assets/background.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.welcome {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+}
+
+.logout {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .logout {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,36 @@
+body {
+  background-color: whitesmoke !important;
+  overflow: hidden;
+}
+
+.register {
+  display: flex;
+  margin-right: 50px;
+  gap: 50px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+form {
+  width: 50%;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    width: 30%;
+  }
+}
+
+.submit a {
+  text-decoration: none;
+}
