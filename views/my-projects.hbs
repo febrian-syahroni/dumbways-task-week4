@@ -57,6 +57,7 @@
 
     {{! My Projects }}
     <section class="projects">
+
       <h1>My Projects</h1>
       <div class="container">
         {{#if projects.length}}
@@ -86,21 +87,23 @@
                       <img src="{{this}}" alt="{{this}}" />
                     {{/each}}
                   </div>
-                  <div class="edit-delete">
+                  <form
+                    action="/delete-project/{{this.id}}"
+                    method="POST"
+                    class="edit-delete"
+                  >
                     <a
                       href="/edit-project/{{this.id}}"
                       class="btn btn-dark"
                     >Edit</a>
-                    <a
-                      action="/delete-project/{{this.id}}"
-                      method="POST"
+                    <button
                       type="submit"
                       class="btn btn-dark"
                       onclick="return confirm('Apakah Anda yakin ingin menghapus project ini?')"
                     >
-                      Delete
-                    </a>
-                  </div>
+                      <a>Delete</a>
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -110,6 +113,13 @@
             <a class="btn btn-warning" href="/create-project">Create a Project</a>
           </div>
         {{/if}}
+      </div>
+      <div style="display: flex; gap: 10px; justify-content: center;">
+        <a class="btn btn-outline-dark rounded-pill px-5" href="/">Back</a>
+        <a
+          class="btn btn-success rounded-pill px-5"
+          href="/create-project"
+        >Create Project</a>
       </div>
     </section>
 

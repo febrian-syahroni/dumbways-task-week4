@@ -39,7 +39,7 @@ section {
 
     .submit {
       display: flex;
-      justify-content: end;
+      justify-content: space-between;
 
       .btn {
         line-height: 20px;

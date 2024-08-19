@@ -70,9 +70,16 @@ app.post("/create-project", upload.single("image"), async (req, res) => {
         start_date: new Date(start_date),
         end_date: new Date(end_date),
         technologies: techArray,
-        image,
-        userId: req.session.user.id,
+        image: image || undefined,
+        user: {
+          connect: {
+            id: req.session.user.id
+          }
+        }
       },
+      include: {
+        user: true
+      }
     });
     res.redirect("/my-projects");
   } catch (error) {
@@ -252,7 +259,7 @@ app.post("/delete-project/:id", async (req, res) => {
       },
     });
 
-    res.redirect("/");
+    res.redirect("/my-projects");
   } catch (error) {
     console.error("Error deleting project:", error);
     res.status(500).send("Terjadi kesalahan saat menghapus project");

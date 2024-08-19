@@ -22,6 +22,10 @@ section {
   align-items: end;
 }
 
+.title {
+  width: 60%;
+}
+
 .logout {
   display: flex;
   gap: 20px;

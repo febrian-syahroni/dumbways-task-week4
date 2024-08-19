@@ -63,7 +63,7 @@
 
     <!-- Form -->
     <section class="container">
-      <h1>Add My Projects</h1>
+      <h1>Create Project</h1>
       {{#if error}}<p style="color: red;">{{error}}</p>{{/if}}
       <form action="/create-project" method="post" enctype="multipart/form-data">
         <div class="mb-3">
@@ -134,7 +134,8 @@
           </label>
         </div>
         <div class="submit">
-          <button type="submit" class="btn btn-dark px-4 rounded-pill shadow">
+          <a class="btn btn-outline-dark rounded-pill px-5" href="/">Back</a>
+          <button type="submit" class="btn btn-success px-5 rounded-pill shadow">
             Create
           </button>
         </div>
